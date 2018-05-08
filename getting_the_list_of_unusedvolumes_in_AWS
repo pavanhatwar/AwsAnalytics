@@ -29,13 +29,6 @@ for a in currentregions:
             month = int(times[5:7])
             day = int(times[8:10])
             ST = date( year , month , day )
-            localtime = time.localtime(time.time())
-            cyear = int( localtime.tm_year)
-            cmonth = int(localtime.tm_mon)
-            cday = int(localtime.tm_mday)
-            cdate = date(cyear,cmonth,cday)
-            diff = cdate - ST
-            DiffDays = diff.days
             volumeid = volume.volume_id
             size = volume.size
             az = volume.availability_zone
@@ -46,3 +39,5 @@ df = pd.DataFrame(csvdata, columns=['Volumeid','Volume_Created_Date','Age of the
 csvname = "ListOfusedVolumesInYourAWSAccOunt" + "-" + todaydate +".csv"
 df.to_csv("csvname")
 
+#IF YOU WANT TO DELETE VOLUMES FEW DAYS OLD THEN CHECK THE BELOW PROVIDED LINK .
+# https://github.com/Sabihuddin/AWS-PYTHON-SCRIPTS/blob/master/VolumeRetentionScriptForAllRegions.py

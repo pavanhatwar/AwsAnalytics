@@ -9,9 +9,13 @@ import pandas as pd
 import botocore.session
 
 session = botocore.session.get_session()
+i = 0
+currentregions=[]
+while i < len(response['Regions']):
+    currentregions.append(response['Regions'][i]['RegionName'])
+    i=i+1
 
 
-currentregions=['ap-south-1', 'eu-west-3', 'eu-west-2', 'eu-west-1', 'ap-northeast-2', 'ap-northeast-1', 'sa-east-1', 'ca-central-1', 'ap-southeast-1', 'ap-southeast-2', 'eu-central-1', 'us-east-1','us-west-1', 'us-west-2']
 csvdata=[]
 todaydate=str(datetime.date.today())
 for a in currentregions:

@@ -5,10 +5,10 @@ import pandas as pd
 import numpy as np
 from datetime import date
 import pandas as pd
+import os
+client = boto3.client('ec2')
 
-import botocore.session
-
-session = botocore.session.get_session()
+response = client.describe_regions()
 i = 0
 currentregions=[]
 while i < len(response['Regions']):

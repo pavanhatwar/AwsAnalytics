@@ -35,10 +35,13 @@ while i < len(UserList['Users']):
      cdate = date(cyear,cmonth,cday)
      diff = cdate - ST
      DiffDays = diff.days
-     final_data = [uName,pAAth,aRn,pLu,uId,DiffDays]
+     final_data = [uName,times,pAAth,aRn,pLu,uId,DiffDays]
      csvdata.append(final_data)
      i+=1
-df = pd.DataFrame(csvdata, columns=[ "UserName","Path" ,"ARn","PassWordLastUsed","UserId","Age_of_the_user"])
+df = pd.DataFrame(csvdata, columns=[ "UserName","Creationdate","Path" ,"ARn","PassWordLastUsed","UserId","Age_of_the_user"])
 csvname = "IAM Users List data" + "-" + todaydate +".csv"
 df.to_csv(csvname)
 print ("your file is save in ", os.getcwd()+csvname)
+
+
+

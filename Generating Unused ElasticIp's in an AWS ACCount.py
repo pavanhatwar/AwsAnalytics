@@ -8,7 +8,7 @@ import pandas as pd
 import os
 client = boto3.client('ec2')
 
-
+response = client.describe_regions()
 i = 0
 currentregions=[]
 while i < len(response['Regions']):

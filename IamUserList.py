@@ -24,6 +24,7 @@ while i < len(UserList['Users']):
      cdate = date(cyear,cmonth,cday)
      month = int(times[5:7])
      day = int(times[8:10])
+     year = int(times[0:4])
      ST = date( year , month , day )
      aRn = user.arn
      pLu = user.password_last_used
